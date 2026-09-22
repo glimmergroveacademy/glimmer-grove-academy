@@ -714,3 +714,39 @@
 .hero-sparse .hero-enrollment-copy h1 + .hero-program-summary {
   margin-top: clamp(22px, 2.8vw, 34px);
 }
+
+/* The mobile hero is taller than one viewport. Let the first carousel slide
+   define the cover height so the following calligraphy section cannot overlap it. */
+@media only screen and (max-width: 760px) {
+  .index-cover {
+    height: auto !important;
+    min-height: 100svh;
+    overflow: visible !important;
+  }
+
+  .index-cover > .carousel-item:first-of-type,
+  .index-cover > .carousel-item:first-of-type.bg-cover.about-cover {
+    position: relative !important;
+    inset: auto !important;
+    height: auto !important;
+    min-height: 100svh;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .index-cover > .carousel-item:not(:first-of-type) {
+    display: none !important;
+  }
+
+  .hero-shell {
+    min-height: 100svh;
+    padding-bottom: 48px;
+  }
+
+  .hero-action-row {
+    position: relative;
+    z-index: 3;
+    padding-bottom: 4px;
+  }
+}
