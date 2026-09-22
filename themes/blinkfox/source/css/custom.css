@@ -1201,3 +1201,13 @@ body.DarkMode .campus-gallery figcaption {
     grid-template-columns: 1fr;
   }
 }
+
+/* Tags are internal blog metadata and are not part of the academy website UI. */
+#artDetail .tag-cate,
+#artDetail .tag_share,
+article .article-tags,
+.post-meta__tag-list,
+#tags,
+#tag-wordcloud {
+  display: none !important;
+}
