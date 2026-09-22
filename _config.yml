@@ -1,19 +1,19 @@
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
-
 # Site
-title: 生命河灵粮堂
-subtitle: ''
-description: I am the way, and the truth, and the life. No one comes to the Father except through me.
-keywords:
-author: ROLA
-language: en
-timezone: ''
+title: 拾光中文学校
+subtitle: 课后托管、中文学习、拓展
+description: 面向奥斯汀家庭的温暖课后项目，提供作业辅导、中文学习和拓展。
+keywords: 拾光中文学校, 奥斯汀课后班, 中文学校, 中文课, 作业辅导, 拓展
+author: 拾光中文学校
+timezone: America/Chicago
+# Internationalization
+i18n:
+  type: [page, post]
+language: zh-CN
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://glimmergroveacademy.github.io/glimmer-grove-academy
+root: /glimmer-grove-academy/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -92,6 +92,7 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+  - source-en/
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -102,5 +103,11 @@ theme: blinkfox
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repository:  https://rolaustin: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@github.com/rolaustin/rolaustin.github.io.git
+  repository:
   branch: main
+
+since: 2024
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+plugins: hexo-generate-feed

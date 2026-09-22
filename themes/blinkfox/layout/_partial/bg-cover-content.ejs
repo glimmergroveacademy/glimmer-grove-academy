@@ -1,0 +1,64 @@
+<div class="hero-shell">
+    <section class="hero-updates hero-sparse" aria-label="拾光中文学校首页重点信息">
+        <div class="hero-enrollment-panel">
+            <div class="hero-enrollment-copy">
+                <p class="hero-kicker">2026 秋季学期 · Afterschool 现已招生</p>
+                <h1>把下午的时光，拾成一束光</h1>
+                <p class="hero-program-summary">拾光中文学校 Afterschool 课程安排在每日下午 <strong>3:00 - 5:55</strong>，包含校车接送、中文学习、作业辅导、才艺拓展和点心时间。面向 PreK 至 4 年级孩子，让放学后的几个小时更有秩序、更有收获，也更有笑声。</p>
+
+                <div class="hero-highlight-row" aria-label="项目亮点">
+                    <div><strong>PreK - 4 年级</strong><span>招生年级</span></div>
+                    <div><strong>3:00 - 5:55</strong><span>每日课程时间</span></div>
+                    <div><strong>9 所小学</strong><span>校车接送覆盖</span></div>
+                    <div><strong>中文 + 作业</strong><span>课后稳定支持</span></div>
+                </div>
+
+                <div class="hero-pickup-schools" aria-label="校车接送覆盖小学">
+                    <h2><i class="fas fa-shuttle-van"></i> 校车接送 · 覆盖以下小学</h2>
+                    <div class="hero-school-chips">
+                        <span>Cactus Ranch</span>
+                        <span>Elsa England</span>
+                        <span>Great Oaks</span>
+                        <span>Patsy Sommer</span>
+                        <span>Brushy Creek</span>
+                        <span>Challenger</span>
+                        <span>Rutledge</span>
+                        <span>Reagan</span>
+                        <span>Basis (Cedar Park Campus)</span>
+                    </div>
+                </div>
+
+                <div class="hero-action-row">
+                    <a class="hero-enrollment-cta" href="https://glimmer-grove-mvp.vercel.app" target="_blank" rel="noopener">立即报名</a>
+                    <a class="hero-latest-link hero-festival-link" href="/day-camp/">
+                        <span class="festival-art" aria-hidden="true"><i class="fas fa-moon"></i><b></b></span>
+                        <span class="festival-copy"><em>当前最新动态</em><strong>十月假期营 · 10/9 &amp; 10/19</strong></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<% if (theme.banner.enable) { %>
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+<script>
+    <% if (theme.banner.enable && theme.banner.random) { %>
+      var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/featureimages/') %>" + Math.floor(Math.random() * <%- theme.featureImages.length %>) + '.jpg';
+    <% } else { %>
+      // 每天切换 banner 图.  Switch banner image every day.
+      var bannerUrl = "<%- theme.jsDelivr.url %><%- url_for('/medias/banner/') %>" + new Date().getDay() + '.jpg';
+    <% } %>
+    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
+
+</script>
+<% } else { %>
+<script>
+    $('.bg-cover').css('background-image', 'url(<%- theme.jsDelivr.url %><%- url_for('/medias/banner/0.jpg') %>)');
+</script>
+<% } %>

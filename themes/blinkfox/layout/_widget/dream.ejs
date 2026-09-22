@@ -1,0 +1,111 @@
+<div class="dream">
+    <% if (theme.dream.showTitle) { %>
+    <div class="title center-align">
+        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;<%= theme.dream.title %>
+    </div>
+    <% } %>
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
+            <%= theme.dream.text %>
+        </div>
+    </div>
+
+<div id="player-containter" >
+  <h2>嚴牧師/師母最新佈道視頻</h2>
+  <div id="player"></div>
+  <div class="video-title" id="video-title">Loading latest video...</div>
+  <div><a id="video-link" href="#" target="_blank"></a></div>
+  </div>
+  
+  <style>
+    #player-containter {
+        text-align: center;
+    }
+    #player {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+    .video-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-top: 1em;
+    }
+    a {
+      color: #cc0000;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <!-- ✅ Load the YouTube IFrame Player API -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+  <script>
+    const API_KEY = "AIzaSyCWnhT807ngIAoZO23vea2aRcJ1otoXE3I"; // 🔑 Replace with your YouTube API key
+    const CHANNEL_ID = "UCGUQrHIew6aanZTP0EWj9hw"; // Pastor Stephen & Xiaoyan Yeem
+    let player;
+
+    // Load latest video from the channel
+    async function getLatestVideo() {
+      const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=3&type=video`;
+
+
+
+ try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (!data.items || data.items.length === 0) {
+          document.getElementById("video-title").textContent = "No videos found.";
+          return null;
+        }
+
+        const video = data.items[0];
+        const videoId = video.id.videoId;
+        const title = video.snippet.title;
+        const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+        // Update title and link
+        document.getElementById("video-title").textContent = title;
+        const link = document.getElementById("video-link");
+        link.href = videoUrl;
+        link.textContent = "▶ Watch on YouTube";
+
+        return videoId;
+      } catch (err) {
+        console.error("Error loading latest video:", err);
+        document.getElementById("video-title").textContent = "Error loading video.";
+        return null;
+      }
+  }
+
+    // YouTube API callback
+      async function onYouTubeIframeAPIReady() {
+      const latestVideoId = await getLatestVideo();
+      if (!latestVideoId) return;
+
+      player = new YT.Player("player", {
+        videoId: latestVideoId,
+        playerVars: {
+          autoplay: 0,
+          controls: 1,
+          modestbranding: 1,
+          rel: 0,
+          showinfo: 0
+        },
+        events: {
+          onReady: (event) => {
+            console.log("YouTube Player ready.");
+          }
+        }
+      });
+    }
+  </script>
+</div>

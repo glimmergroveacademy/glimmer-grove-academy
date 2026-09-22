@@ -1,38 +1,15 @@
 ---
-title: Hello World
+title: 拾光中文学校
+date: 2026-07-18 09:00:00
+tags:
+  - 拾光中文学校
+  - 课后项目
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+## 拾光中文学校
 
-### Create a new post
+欢迎来到拾光中文学校。我们正在为奥斯汀和 Round Rock 周边家庭筹备一个温暖、有结构的课后中文与拓展项目。
 
-``` bash
-$ hexo new "My New Post"
-```
+请访问首页、课程项目、团队成员、加入我们和联系我们页面，了解当前信息。
 
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+[返回首页](/)
