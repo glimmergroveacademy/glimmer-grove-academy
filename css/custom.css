@@ -436,6 +436,40 @@ body.DarkMode .sunny-primary {
   padding: 10px 12px;
 }
 
+.tour-panel .inquiry-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #9b6a09;
+  background-color: #f6b940;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #18352b 50%),
+    linear-gradient(135deg, #18352b 50%, transparent 50%),
+    linear-gradient(to right, rgba(255, 255, 255, .55), rgba(255, 255, 255, .55));
+  background-position:
+    calc(100% - 22px) 50%,
+    calc(100% - 15px) 50%,
+    calc(100% - 46px) 50%;
+  background-repeat: no-repeat;
+  background-size: 7px 7px, 7px 7px, 1px 28px;
+  color: #000 !important;
+  font-size: 1.03rem;
+  font-weight: 900;
+  cursor: pointer;
+  min-height: 52px;
+  padding: 12px 58px 12px 14px;
+  box-shadow: 0 10px 22px rgba(104, 71, 7, .18);
+}
+
+.tour-panel .inquiry-form select:invalid {
+  color: #000 !important;
+}
+
+.tour-panel .inquiry-form select option {
+  background: #fffdf2;
+  color: #000 !important;
+  font-weight: 800;
+}
+
 .inquiry-form textarea {
   min-height: 140px;
   resize: vertical;
@@ -447,6 +481,12 @@ body.DarkMode .sunny-primary {
   border-color: #1f8f71;
   box-shadow: 0 0 0 3px rgba(31, 143, 113, .14);
   outline: none;
+}
+
+.tour-panel .inquiry-form select:focus {
+  border-color: #18352b;
+  background-color: #ffd66a;
+  box-shadow: 0 0 0 4px rgba(246, 185, 64, .32), 0 12px 24px rgba(104, 71, 7, .18);
 }
 
 .inquiry-form .inquiry-full,
@@ -475,6 +515,21 @@ body.DarkMode .sunny-primary {
   color: #b43b2f;
 }
 
+.tour-panel {
+  max-width: 880px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tour-window-note {
+  padding: 12px 14px;
+  border: 1px solid rgba(246, 185, 64, .45);
+  border-radius: 8px;
+  background: rgba(255, 248, 226, .82);
+  color: #2a3d34 !important;
+  font-weight: 800;
+}
+
 .inquiry-form button:disabled {
   cursor: wait;
   opacity: .72;
@@ -486,6 +541,11 @@ body.DarkMode .inquiry-form select,
 body.DarkMode .inquiry-form textarea {
   background: rgba(255, 255, 255, .96) !important;
   color: #22332b !important;
+}
+
+body.DarkMode .tour-panel .inquiry-form select,
+body.DarkMode .tour-panel .inquiry-form select option {
+  color: #000 !important;
 }
 
 body.DarkMode .inquiry-form label,
