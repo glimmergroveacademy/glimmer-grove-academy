@@ -557,6 +557,29 @@
   min-width: 178px;
 }
 
+.hero-absence-link {
+  align-items: center;
+  background: rgba(255, 255, 255, .96);
+  border: 2px solid rgba(31, 78, 63, .45);
+  border-radius: 6px;
+  box-shadow: 0 12px 24px rgba(24, 53, 43, .14);
+  color: #18352b;
+  display: inline-flex;
+  font-size: .98rem;
+  font-weight: 900;
+  gap: 8px;
+  justify-content: center;
+  margin-left: auto;
+  min-height: 58px;
+  padding: 10px 18px;
+}
+
+.hero-absence-link:hover {
+  background: #e7f5ee;
+  color: #18352b;
+  transform: translateY(-1px);
+}
+
 .hero-latest-link {
   display: inline-flex;
   flex-direction: column;
@@ -604,7 +627,9 @@
   }
 
   .hero-action-row .hero-enrollment-cta,
+  .hero-absence-link,
   .hero-latest-link {
+    margin-left: 0;
     width: 100%;
   }
 }

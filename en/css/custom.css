@@ -970,6 +970,32 @@ body.DarkMode .daily-video-placeholder h3 {
   font-weight: 700;
 }
 
+.parent-links-block {
+  background: rgba(255, 248, 226, .7);
+  border: 1px solid rgba(246, 185, 64, .35);
+  border-radius: 8px;
+  margin-top: 14px;
+  padding: 16px;
+}
+
+.contact-detail-block .parent-quick-link {
+  align-items: center;
+  background: #f6b940;
+  border-radius: 6px;
+  box-shadow: 0 8px 18px rgba(104, 71, 7, .16);
+  color: #17251f;
+  display: inline-flex;
+  font-weight: 900;
+  line-height: 1.2;
+  padding: 10px 14px;
+}
+
+.contact-helper-text {
+  color: #5b6d63 !important;
+  font-size: .95rem;
+  margin-top: 10px !important;
+}
+
 .contact-info-grid .contact-map {
   margin: 0;
   min-height: 100%;
@@ -1267,6 +1293,14 @@ body.DarkMode .day-camp-poster img {
 
 .campus-gallery-safety {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.campus-gallery-art {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.campus-gallery-art img {
+  aspect-ratio: 16 / 9;
 }
 
 .campus-gallery figure {
